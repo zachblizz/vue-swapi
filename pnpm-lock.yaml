@@ -4,16 +4,20 @@ specifiers:
   '@vue/cli-plugin-babel': ~4.5.0
   '@vue/cli-plugin-eslint': ~4.5.0
   '@vue/cli-service': ~4.5.0
+  axios: ^0.21.1
   babel-eslint: ^10.1.0
   core-js: ^3.6.5
   eslint: ^6.7.2
   eslint-plugin-vue: ^6.2.2
   vue: ^2.6.11
   vue-template-compiler: ^2.6.11
+  vuex: ^3.6.2
 
 dependencies:
+  axios: 0.21.1
   core-js: 3.16.2
   vue: 2.6.14
+  vuex: 3.6.2_vue@2.6.14
 
 devDependencies:
   '@vue/cli-plugin-babel': 4.5.13_ff590b0de5aca690f3f4042d35869c4a
@@ -2141,6 +2145,14 @@ packages:
     resolution: {integrity: sha1-1h9G2DslGSUOJ4Ta9bCUeai0HFk=}
     dev: true
 
+  /axios/0.21.1:
+    resolution: {integrity: sha1-IlY0gZYvTWvemnbVFu8OXTwJsrg=}
+    dependencies:
+      follow-redirects: 1.14.2
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
   /babel-eslint/10.1.0_eslint@6.8.0:
     resolution: {integrity: sha1-aWjlaKkQt4+zd5zdi2rC9HmUMjI=}
     engines: {node: '>=6'}
@@ -4149,7 +4161,7 @@ packages:
       readable-stream: 2.3.7
     dev: true
 
-  /follow-redirects/1.14.2_debug@4.3.2:
+  /follow-redirects/1.14.2:
     resolution: {integrity: sha1-zsuCUEfAD15msUL5D+1PUV3seJs=}
     engines: {node: '>=4.0'}
     peerDependencies:
@@ -4157,9 +4169,6 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
-    dependencies:
-      debug: 4.3.2
-    dev: true
 
   /for-in/1.0.2:
     resolution: {integrity: sha1-gQaNKVqBQuwKxybG4iAMMPttXoA=}
@@ -4665,7 +4674,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.14.2_debug@4.3.2
+      follow-redirects: 1.14.2
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -8278,6 +8287,14 @@ packages:
 
   /vue/2.6.14:
     resolution: {integrity: sha1-5RqlJQJQ1Wmj+606ilpofWA24jU=}
+    dev: false
+
+  /vuex/3.6.2_vue@2.6.14:
+    resolution: {integrity: sha1-I2vAhqhww655lG8QfxbeWdWJXnE=}
+    peerDependencies:
+      vue: ^2.0.0
+    dependencies:
+      vue: 2.6.14
     dev: false
 
   /watchpack-chokidar2/2.0.1:

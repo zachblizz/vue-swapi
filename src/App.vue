@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld />
   </div>
 </template>
 
@@ -17,12 +16,22 @@ export default {
 </script>
 
 <style>
+:root{
+  --button-color: #fff;
+  --button-bg: rgb(141, 79, 241);
+  --button-bg-hover: rgb(117, 66, 199);
+  --button-bg-disabled: rgba(117, 66, 199, .4);
+  --border: rgb(141, 79, 241);
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>
