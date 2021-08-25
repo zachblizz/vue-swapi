@@ -66,9 +66,8 @@ input::-webkit-input-placeholder {
 }
 
 button {
-  background: var(--button-bg);
+  border: 2px solid var(--border);
   color: var(--button-color);
-  border: none;
   font-weight: bold;
   padding: 0.25rem 1rem;
   transition: background 100ms ease-in-out;
@@ -82,6 +81,7 @@ button:hover {
 
 button:disabled {
   background: var(--button-bg-disabled);
+  border: 2px solid var(--button-bg-disabled);
   cursor: not-allowed;
 }
 </style>

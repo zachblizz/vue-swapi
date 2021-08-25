@@ -31,15 +31,15 @@ export default {
 }
 
 .spinner {
-  height: 4rem;
-  width: 4rem;
+  height: 2rem;
+  width: 2rem;
   border-radius: 50%;
   display: inline-block;
   position: relative;
 }
 
 .spinner::after {
-  animation: spin 1s linear infinite;
+  animation: spin .75s linear infinite;
   border: 3px solid #ddd;
   border-top-color: var(--button-bg);
   content: "";
