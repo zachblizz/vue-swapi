@@ -80,8 +80,9 @@ button:hover {
 }
 
 button:disabled {
-  background: var(--button-bg-disabled);
   border: 2px solid var(--button-bg-disabled);
   cursor: not-allowed;
+  text-decoration: line-through;
+  background-color: transparent;
 }
 </style>

@@ -41,7 +41,7 @@ export default {
 .spinner::after {
   animation: spin .75s linear infinite;
   border: 3px solid #ddd;
-  border-top-color: var(--button-bg);
+  border-top-color: var(--border);
   content: "";
   display: block;
   height: 100%;
