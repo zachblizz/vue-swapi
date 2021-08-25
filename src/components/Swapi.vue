@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <Search />
-    <div v-if="isLoading">Loading chars...</div>
+  <div class="container">
+    <search />
+    <loader v-if="isLoading" />
     <div v-else class="cards-container">
       <div v-for="char in data.results" v-bind:key="char.name">
         <char-card :char="char" />
@@ -16,11 +16,12 @@ import { mapState } from "vuex";
 import { store, GET_DATA_ACTION } from "../store";
 
 import CharCard from "./CharCard.vue";
+import Loader from './Loader.vue';
 import Search from "./Search.vue";
 
 export default {
-  components: { CharCard, Search },
-  name: "HelloWorld",
+  components: { CharCard, Search, Loader },
+  name: "Swapi",
   computed: mapState(["isLoading", "data"]),
   mounted() {
     store.dispatch(GET_DATA_ACTION);
@@ -30,10 +31,39 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.container {
+  width: 60%;
+}
+
 .cards-container {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: repeat(3, minmax(0, 1fr));
+  align-items: center;
   gap: 1rem;
+}
+
+@media screen and (max-width: 900px) {
+  .cards-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .cards-container {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .container {
+    width: 90%;
+  }
+}
+
+.loading {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 </style>

@@ -3,7 +3,7 @@
     <button @click="onPageChange(-1)" :disabled="!Boolean(data.previous)">
       prev
     </button>
-    <input @keyup="onSearch" />
+    <input @keyup="onSearch" placeholder="search by name" />
     <button @click="onPageChange(1)" :disabled="!Boolean(data.next)">
       next
     </button>
@@ -12,14 +12,13 @@
 
 <script>
 import { mapState } from "vuex";
+
 import { store, GET_DATA_ACTION } from "../store";
 
 export default {
   name: "Search",
   data() {
-    return {
-      page: 1,
-    };
+    return { page: 1, };
   },
   methods: {
     onSearch(evt) {
@@ -41,10 +40,14 @@ export default {
 
 <style scoped>
 .search-wrapper {
+  position: sticky;
+  top: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  background: var(--bg-color);
+  padding: 1rem 0;
+  transition: position 500ms ease-in-out;
 }
 
 input {
@@ -52,6 +55,14 @@ input {
   width: 100%;
   margin: 0 1rem;
   border: 2px solid var(--border);
+  color: var(--main-color);
+  font-size: 1rem;
+}
+
+input::placeholder,
+input::-moz-placeholder,
+input::-webkit-input-placeholder {
+  color: var(--secondary-color);
 }
 
 button {
@@ -61,6 +72,7 @@ button {
   font-weight: bold;
   padding: 0.25rem 1rem;
   transition: background 100ms ease-in-out;
+  font-size: 1rem;
 }
 
 button:hover {

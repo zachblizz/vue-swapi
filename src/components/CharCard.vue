@@ -1,7 +1,7 @@
 <template>
   <div class="card-wrapper">
-    <h3>{{ char.name }}</h3>
-    <p>Has {{ char.hair_color }} hair, {{ char.eye_color }} eyes, and is {{ char.height }} tall.</p>
+    <div class="title">{{ char.name }}</div>
+    <div class="description">Has {{ char.hair_color }} hair, {{ char.eye_color }} eyes, and is {{ Math.floor(char.height/30.48) }}ft. tall.</div>
   </div>
 </template>
 
@@ -20,6 +20,18 @@ export default {
   flex-direction: column;
   border: 2px solid var(--border);
   border-radius: 0.25rem;
-  padding: 0 1rem;
+  padding: 1rem;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  color: var(--main-color);
+}
+
+.description {
+  color: var(--secondary-color);
+  font-weight: 500;
 }
 </style>
