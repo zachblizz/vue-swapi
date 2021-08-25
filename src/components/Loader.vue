@@ -40,8 +40,8 @@ export default {
 
 .spinner::after {
   animation: spin .75s linear infinite;
-  border: 3px solid #ddd;
-  border-top-color: var(--border);
+  border: var(--loader-border);
+  border-top-color: var(--loader-top-border);
   content: "";
   display: block;
   height: 100%;

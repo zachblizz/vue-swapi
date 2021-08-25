@@ -54,7 +54,7 @@ input {
   padding: 0.5rem;
   width: 100%;
   margin: 0 1rem;
-  border: 2px solid var(--border);
+  border: var(--border);
   color: var(--main-color);
   font-size: 1rem;
 }
@@ -66,7 +66,7 @@ input::-webkit-input-placeholder {
 }
 
 button {
-  border: 2px solid var(--border);
+  border: var(--border);
   color: var(--button-color);
   font-weight: bold;
   padding: 0.25rem 1rem;

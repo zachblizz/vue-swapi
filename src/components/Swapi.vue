@@ -32,15 +32,21 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .container {
-  width: 60%;
+  width: 90%;
 }
 
 .cards-container {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: repeat(3, minmax(0, 1fr));
-  align-items: center;
   gap: 1rem;
+}
+
+
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 40%;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -52,10 +58,6 @@ export default {
 @media screen and (max-width: 700px) {
   .cards-container {
     grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-
-  .container {
-    width: 90%;
   }
 }
 

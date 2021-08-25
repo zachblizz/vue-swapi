@@ -17,10 +17,15 @@ export default {
 <style scoped>
 .card-wrapper {
   display: flex;
-  flex-direction: column;
-  border: 2px solid var(--border);
-  border-radius: 0.25rem;
   padding: 1rem;
+  flex-direction: column;
+  border: var(--border);
+  border-radius: 0.25rem;
+  transition: box-shadow 150ms ease-in;
+}
+
+.card-wrapper:hover {
+  box-shadow: var(--box-shadow);
 }
 
 .title {
