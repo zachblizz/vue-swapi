@@ -28,7 +28,7 @@ export default {
   --box-shadow: 0 8px 10px -5px rgb(82, 27, 170);
 
   --loader-top-border: rgb(145, 82, 245);
-  --loader-border: 3px solid rgb(133, 109, 172);
+  --loader-border: 3px solid rgb(223, 220, 228);
 }
 
 @media (prefers-color-scheme: dark) {

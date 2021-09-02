@@ -1,12 +1,16 @@
 <template>
   <div class="container">
-    <search />
-    <loader v-if="isLoading" />
+    <Search />
+    <Loader v-if="isLoading" />
     <div v-else class="cards-container">
-      <div v-for="char in data.results" v-bind:key="char.name">
-        <char-card :char="char" />
-      </div>
+      <char-card
+        v-for="char in data.results"
+        v-bind:key="char.name"
+        v-bind:char="char"
+      >
+      </char-card>
     </div>
+    <slot></slot>
   </div>
 </template>
 
