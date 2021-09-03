@@ -1,22 +1,33 @@
 <template>
   <div class="search-wrapper">
-    <button @click="onPageChange(-1)" :disabled="!Boolean(data.previous)">
+    <swapi-btn
+      @pageDown="onPageChange(--page)"
+      evtName="pageDown"
+      :isDisabled="!Boolean(data.previous)"
+    >
       prev
-    </button>
+    </swapi-btn>
     <input @keyup="onSearch" placeholder="search by name" />
-    <button @click="onPageChange(1)" :disabled="!Boolean(data.next)">
+    <swapi-btn
+      @pageUp="onPageChange(++page)"
+      evtName="pageUp"
+      :isDisabled="!Boolean(data.next)"
+    >
       next
-    </button>
+    </swapi-btn>
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
 
+import SwapiBtn from "./ui/SwapiBtn";
+
 import { store, GET_DATA_ACTION } from "../store";
 
 export default {
   name: "Search",
+  components: {SwapiBtn},
   data() {
     return { page: 1, };
   },
@@ -29,9 +40,9 @@ export default {
         });
       }
     },
-    onPageChange(page) {
-      this.page += page;
-      store.dispatch(GET_DATA_ACTION, { term: "page", value: this.page });
+    onPageChange(value) {
+      // console.log(this.page, evt);
+      store.dispatch(GET_DATA_ACTION, { term: "page", value });
     },
   },
   computed: mapState(["data"]),
@@ -63,25 +74,5 @@ input::placeholder,
 input::-moz-placeholder,
 input::-webkit-input-placeholder {
   color: var(--secondary-color);
-}
-
-button {
-  border: var(--border);
-  color: var(--button-color);
-  font-weight: bold;
-  padding: 0.25rem 1rem;
-  transition: background 100ms ease-in-out;
-  font-size: 1rem;
-}
-
-button:hover {
-  cursor: pointer;
-  background: var(--button-bg-hover);
-}
-
-button:disabled {
-  cursor: not-allowed;
-  opacity: 40%;
-  background-color: transparent;
 }
 </style>

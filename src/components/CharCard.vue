@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "CharCard",
+  name: "char-card",
   props: {
     char: Object
   }
