@@ -7,8 +7,7 @@
         v-for="char in data.results"
         v-bind:key="char.name"
         v-bind:char="char"
-      >
-      </char-card>
+      />
     </div>
     <slot></slot>
   </div>
@@ -25,7 +24,7 @@ import Search from "./Search.vue";
 
 export default {
   components: { CharCard, Search, Loader },
-  name: "Swapi",
+  name: "swapi",
   computed: mapState(["isLoading", "data"]),
   mounted() {
     store.dispatch(GET_DATA_ACTION);

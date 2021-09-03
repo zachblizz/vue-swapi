@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Swapi />
+    <swapi />
   </div>
 </template>
 
