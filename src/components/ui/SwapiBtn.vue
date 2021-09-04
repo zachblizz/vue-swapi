@@ -1,5 +1,5 @@
 <template>
-    <button @click="onClick()" :disabled="isDisabled">
+    <button :disabled="isDisabled">
       <slot></slot>
     </button>
 </template>
@@ -8,13 +8,7 @@ export default {
   name: "swapi-btn",
   props: {
     isDisabled: Boolean,
-    evtName: String,
   },
-  methods: {
-    onClick() {
-      this.$emit(this.evtName);
-    }
-  }
 }
 </script>
 

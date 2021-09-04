@@ -1,16 +1,14 @@
 <template>
   <div class="search-wrapper">
     <swapi-btn
-      @page-down="onPageChange(--page)"
-      evtName="page-down"
+      @click.native="onPageChange(--page)"
       :isDisabled="!Boolean(data.previous)"
     >
       prev
     </swapi-btn>
     <input @keyup.enter="onSearch" placeholder="search by name" />
     <swapi-btn
-      @page-up="onPageChange(++page)"
-      evtName="page-up"
+      @click.native="onPageChange(++page)"
       :isDisabled="!Boolean(data.next)"
     >
       next
