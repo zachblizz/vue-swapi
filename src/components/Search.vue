@@ -7,7 +7,7 @@
     >
       prev
     </swapi-btn>
-    <input @keyup="onSearch" placeholder="search by name" />
+    <input @keyup.enter="onSearch" placeholder="search by name" />
     <swapi-btn
       @pageUp="onPageChange(++page)"
       evtName="pageUp"
@@ -33,15 +33,12 @@ export default {
   },
   methods: {
     onSearch(evt) {
-      if (evt.key.toLowerCase() === "enter") {
-        store.dispatch(GET_DATA_ACTION, {
-          term: "search",
-          value: evt.target.value,
-        });
-      }
+      store.dispatch(GET_DATA_ACTION, {
+        term: "search",
+        value: evt.target.value,
+      });
     },
     onPageChange(value) {
-      // console.log(this.page, evt);
       store.dispatch(GET_DATA_ACTION, { term: "page", value });
     },
   },
